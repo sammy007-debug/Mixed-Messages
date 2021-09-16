@@ -51,7 +51,16 @@ const messages = {
         return this._predictions ? this._predictions : null
     },
     _activities: [
-
+        'Make homemade ice cream',
+        'Do something you used to do as a kid',
+        'Wash your car',
+        'Uninstall unused apps from your devices',
+        'Watch a movie you\'d never usually watch',
+        'Wash the dishes',
+        'Try a food you don\'t like',
+        'Research a topic you\'re interested in',
+        'Learn a new programing language',
+        'Write a short story'
     ],
     get activities () {
         return this._activities ? this._activities : null
