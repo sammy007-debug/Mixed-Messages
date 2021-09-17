@@ -8,7 +8,7 @@ function randomNumber(arr){
     return arr[Math.floor(Math.random()*arr.length)]
     }
 
-
+function fortune(){
 let array = ["Your sign right now is a ", "You are having: ", "You should: " ]
 let newArr = []
 for(let i= 0; i < quotes.length; i++){
@@ -16,4 +16,10 @@ for(let i= 0; i < quotes.length; i++){
 newArr.push(array[i] + randomNumber(quotes[i]))
 
 }
-console.log(newArr.join(" \n"))
+
+return newArr.join(" \n")
+
+}
+
+
+console.log(fortune())
