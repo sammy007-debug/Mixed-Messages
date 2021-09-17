@@ -120,7 +120,7 @@ const messages = {
         'What do you call a cheese that’s not yours ... Nacho cheese!', 
         'What’s orange and sounds like a parrot? ... A carrot', 
         'Why does Humpty Dumpty love autumn? ... Because he always has a great fall', 
-        'Where to spaghetti and sauce go to dance? ... The meat ball', 
+        'Where do spaghetti and sauce go to dance? ... The meat ball', 
         'When the bottle of Pepsi hit me, I didn\'t cry. It was a soft drink'
     ],
     get jokes () {
@@ -137,9 +137,10 @@ const messages = {
 }
 
 // list random messages of all message types
-console.log('Compliment:',messages.random('compliments'))
-console.log('Fortune:',messages.random('fortunes'))
-console.log('Activity:',messages.random('activities'))
+
+console.log('Compliment:', messages.random('compliments'))
+// console.log('Fortune:', messages.random('fortunes'))
+console.log('Activity:', messages.random('activities'))
 let quoteObj = messages.random('quotes')  // call the random method on quotes once so that the quote and author are of the same quote
-console.log('Quote:',quoteObj.quote + ' ~ ' + quoteObj.author)
-console.log('Joke:',messages.random('jokes'))
+console.log('Quote:', quoteObj.quote + ' ~ ' + quoteObj.author)
+console.log('Joke:', messages.random('jokes'))
