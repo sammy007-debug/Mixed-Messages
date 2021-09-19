@@ -78,7 +78,7 @@ main {
     color: var(--text-color);
     opacity: 0.5;
     width: 125px;
-    height: 50px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,7 +110,7 @@ main {
     }
     
     .options > ul li {
-        width: 100px;
+        width: 110px;
     }
 }
 
@@ -139,6 +139,7 @@ p.text {
 @media only screen and (max-width: 700px) {
     .display-container {
         width: 100%;
+        padding: 25px;
     }
 }
 
