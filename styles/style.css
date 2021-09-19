@@ -155,12 +155,13 @@ p.text {
     font-size: 20px;
     color: var(--text-color);
     opacity: 0.3;
-    transition: opacity 200ms linear 100ms;
+    transition: opacity 100ms linear 100ms, color 100ms linear 100ms;
 }
 
 .redo button:hover {
     cursor: pointer;
     opacity: 1;
+    color: var(--neon-blue);
 }
 
 /* footer */
