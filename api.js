@@ -52,7 +52,7 @@ function activity(){
     }
     
     compliment()
-    //getapi();
+    
     quotes()
     activity()
     getJokes()
