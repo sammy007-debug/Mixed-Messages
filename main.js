@@ -1,6 +1,4 @@
-// Logging one of each message type would be tiring for the user to read everytime they request a random message so I thought it would be less exhausting & more engaging if the 
-// user can choose if they want a compliment, prediction, an activity, a joke, quote, etc
-// I put getters to prevent our other code from editing the already set messages by mistake
+import { getActivity, getCompliment, getJoke } from "./api"
 
 const messages = {
     _compliments: [
