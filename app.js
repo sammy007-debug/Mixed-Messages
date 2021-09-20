@@ -21,5 +21,8 @@ return newArr.join(" \n")
 
 }
 
-
 console.log(fortune())
+
+
+
+
