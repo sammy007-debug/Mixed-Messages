@@ -28,7 +28,7 @@ function getCompliment() {
 // we don't have a good API for quotes yet!!!
 function getQuote() {
     fetch('https://inspiration.goprogram.ai/')
-    .then(res => res)
+    .then(res => res.json())
     .then(data => console.log('Quote: ' + data.quote + ' ~ ' + data.author))
     .catch(error => console.error('Error: ' + error))
 }

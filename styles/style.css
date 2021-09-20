@@ -19,10 +19,6 @@ body {
     font-family: 'Raleway', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     background-color: var(--background-color);
     color: var(--text-color);
     text-align: center;
