@@ -1,38 +1,84 @@
-import axios from 'axios'
+//SELECTORS
+const btnColor = document.querySelectorAll('li')
+const btnRefresh = document.querySelector('#refresh') 
+const msgField = document.querySelector('#textField')
+const complBtn = document.querySelector('#complBtn')
+const jokesBtn = document.querySelector('#jokesBtn')
+const quotesBtn = document.querySelector('#quotesBtn')
+const fortBtn = document.querySelector('#fortBtn')
 
 
-// START QUOTES
+//REFRESH API
+btnRefresh.addEventListener('click', function () {
+    location.reload(false)
+})
+//CHANGE BTN BACKGROUND-COLOR 
+btnColor.forEach(btn => {
+    btn.addEventListener("click", function(){
+        btnColor.forEach(btn => btn.classList.remove("active"));
+        this.classList.add('active');
+    });
+});
 
-const insult = () => {
-    axios
-        .get('https://api.themotivate365.com/stoic-quote')
-        .then(response => console.log(response.data.data.quote))
-        .catch(err => console.log(err))
-};
+//API URL
 
-insult();
-
-
-
-// START JOKES
-
-const jokes = () => {
-    axios
-        .get('https://icanhazdadjoke.com/')
-        .then(response => console.log(response))
-        .catch(err => console.log(err))
-};
-
-// jokes();
+const quotes = 'https://goquotes-api.herokuapp.com/api/v1/all/quotes';
+const jokes = 'https://icanhazdadjoke.com/';
+const compliment = 'https://complimentr.com/api'
+const activity = 'https://www.boredapi.com/api/activity/';
 
 
-// START COMPLIMENTS
+// API GET
 
-const compliments = () => {
-    axios
-        .get('https://complimentr.com/api')
-        .then(response => console.log(response.data.compliment))
-        .catch(err => console.log(err))
-};
+function getCompliments() {
+    fetch(compliment)
+        .then(res => res.json())
+        .then(data => {
+            msgField.innerHTML = data.compliment.charAt(0).toUpperCase() + data.compliment.slice(1)
+        })
+        .catch(err => console.error(err))
+}
 
-compliments();
+
+function getJokes() {
+    fetch(jokes, {headers: {'Accept': 'application/json'}})
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            msgField.innerHTML = data.joke
+        })
+        .catch(err => console.error(err))
+}
+
+
+function getQuotes() {
+  fetch(quotes)
+        .then(res => res.json())
+        .then(
+            data => {
+                let randomQuote = Math.floor(Math.random() * data.quotes.length)
+                msgField.innerHTML = `${data.quotes[randomQuote].text} ~ ${data.quotes[randomQuote].author}`
+            })
+        .catch(err => console.error(err))
+}
+
+
+
+function getActivity() {
+    fetch(activity)
+        .then(res => res.json())
+        .then(data => {
+            msgField.innerHTML = data.activity
+        })
+        .catch(err => console.error(err))
+}
+
+
+//EVENT LISTENER
+complBtn.addEventListener('click', getCompliments)
+jokesBtn.addEventListener('click', getJokes)
+quotesBtn.addEventListener('click', getQuotes)
+fortBtn.addEventListener('click', getActivity)
+
+//COMPLIMENT START FIRST
+getCompliments()

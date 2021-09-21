@@ -76,7 +76,8 @@ main {
 
 @media only screen and (min-width: 700px) {
     .options > ul {
-        display: flex;        
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 0;  
     }
 }
 
@@ -139,8 +140,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 650px;
-    height: 265px;
+    min-width: 650px;
+    max-width: 850px;
+    min-height: 265px;
+    max-height: 365px;
     background-color: var(--dark-blue);
     border-radius: 20px;
     box-shadow: 0 40px 50px hsl(0, 0%, 0%, 0.3);
@@ -157,7 +160,9 @@ p.text {
 
 @media only screen and (max-width: 700px) {
     .display-container {
-        width: 100%;
+        min-width: 100%;
+        min-height: 300px;
+        max-height: 500px;
         padding: 25px;
     }
 }
