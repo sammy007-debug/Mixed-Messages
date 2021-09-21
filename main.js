@@ -1,5 +1,3 @@
-import { getActivity, getCompliment, getJoke } from "./api"
-
 const messages = {
     _compliments: [
         'You have a great sense of humor', 
@@ -22,30 +20,6 @@ const messages = {
     ],
     get compliments () {
         return this._compliments
-    },
-    _fortunes: [ // Disclaimer, these predictions are for entertainment purposes and should not be taken seriously
-        // affirmative answers
-        'It is certain',
-        'Without a doubt',
-        'You may rely on it',
-        'Most likely',
-        'Outcome is good',
-        'Yes',
-        //neutral answers
-        'Reply hazy, try again',
-        'Ask again later',
-        'Better not tell you now',
-        'Cannot predict now',
-        'Concentrate and ask again',
-        // negative answers
-        'Don\'t count on it',
-        'My reply is no',
-        'My sources say no',
-        'Very doubtful',
-        'Outlook not so good'
-    ],
-    get fortunes () {
-        return this._fortunes
     },
     _activities: [
         'Make homemade ice cream',
