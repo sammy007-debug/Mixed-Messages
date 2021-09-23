@@ -22,7 +22,7 @@ btnColor.forEach(btn => {
 
 //API URL
 
-const quotes = 'https://goquotes-api.herokuapp.com/api/v1/all/quotes';
+const quotes = 'https://type.fit/api/quotes';
 const jokes = 'https://icanhazdadjoke.com/';
 const compliment = 'https://complimentr.com/api'
 const activity = 'https://www.boredapi.com/api/activity/';
@@ -53,14 +53,21 @@ function getJokes() {
 
 function getQuotes() {
   fetch(quotes)
-        .then(res => res.json())
-        .then(
-            data => {
-                let randomQuote = Math.floor(Math.random() * data.quotes.length)
-                msgField.innerHTML = `${data.quotes[randomQuote].text} ~ ${data.quotes[randomQuote].author}`
-            })
-        .catch(err => console.error(err))
-}
+  .then(res => res.json())
+  .then(data => {
+    
+    let randomQuote = Math.floor(Math.random()*data.length);
+    if(data[randomQuote].author === null){
+        msgField.innerHTML = `Quote Of The Day: Unknown ~ ${data[randomQuote].text}`
+      }
+    else {
+        msgField.innerHTML = `Quote Of The Day: ${data[randomQuote].text} ~ ${data[randomQuote].author}`
+      }
+    
+    })
+    
+ 
+    .catch(err => console.error(err))}
 
 
 
