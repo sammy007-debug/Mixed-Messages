@@ -22,20 +22,21 @@
     </header>
 
     <main>
-        <div class="options">
-            <ul>
-                <li data-type="compliment">Compliments</li>
-                <li class="active" data-type="joke">Jokes</li>
-                <li data-type="quote">Quotes</li>
+        <div id="optionDiv" class="options">
+            <ul class="menu">
+                <li id="complimentButton" class="active" >Compliments</li>
+                <li id="jokesButton" >Jokes</li>
+                <li id="quotesButton" >Quotes</li>
+                <li id="fortunesButton" >Activity</li>
             </ul>
         </div>
 
-        <div class="display-container">
-            <p class="text"></p>
+        <div class="display-container" id="textDiv">
+            <p class="text" id="textBox"> </p>
         </div>
 
         <div class="redo">
-            <button><i class="fas fa-redo"></i></button>
+            <button><i id="refresh" class="fas fa-redo"></i></button>
         </div>
     </main>
 
@@ -48,5 +49,9 @@
 
     <!-- font awesom cdn -->
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg="nest"></script>
-</body>
+   
+  
+<script src="api.js"></script>
+    
+  </body>
 </html>

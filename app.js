@@ -136,6 +136,7 @@ const messages = {
     }
 }
 
+
 // list random messages of all message types
 
 console.log('Compliment:', messages.random('compliments'))
@@ -144,3 +145,4 @@ console.log('Activity:', messages.random('activities'))
 let quoteObj = messages.random('quotes')  // call the random method on quotes once so that the quote and author are of the same quote
 console.log('Quote:', quoteObj.quote + ' ~ ' + quoteObj.author)
 console.log('Joke:', messages.random('jokes'))
+ 
